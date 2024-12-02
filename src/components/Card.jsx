@@ -1,47 +1,35 @@
+//import React from 'react'
+
 function Card() {
 
+  const handleClickDownload = ()=> {alert("Download Started...")};
+
   const data = [
-    {image: "https://plus.unsplash.com/premium_photo-1732736768058-42f76dc6e6e3?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw1fHx8ZW58MHx8fHx8", 
-      name:"Sunsets", 
-      status: false,
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit"},
-    {image: 'https://images.unsplash.com/photo-1732364896193-bc4f299d1de1?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHw3fHx8ZW58MHx8fHx8', 
-      name: "Blossoms", 
-      status: false,  // Add a new property to indicate whether the card is status or not
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit"},
-    {image: 'https://images.unsplash.com/photo-1732539661267-5a6b5e6aa65e?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwxMHx8fGVufDB8fHx8fA%3D%3D', 
-      name: "Scapes", 
-      status: true,
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit"},
-    {image: 'https://images.unsplash.com/photo-1732482124606-697008dab09c?w=1000&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxmZWF0dXJlZC1waG90b3MtZmVlZHwzfHx8ZW58MHx8fHx8', 
-      name: "Shores", 
-      status: false,  // Add a new property to indicate whether the card is status or not
-      description: "lorem ipsum dolor sit amet, consectetur adipiscing elit"},
-  ]
+    { name: "Mahiya ve", artist: "Arijit singh", description: "Lets put some random words to fill the damn space real quick." },
+    { name: "Soniye", artist: "KK", description: "Lets put some random words to fill the damn space real quick."},
+    { name: "Jannat", artist: "KK", description: "Lets put some random words to fill the damn space real quick." },
+    { name: "Mona re", artist: "Bombay vikings", description: "Lets put some random words to fill the damn space real quick." },
+    { name: "Saavan me", artist: "Falguni pathak", description: "Lets put some random words to fill the damn space real quick."},
+  ];
 
   return (
-    <div className="w-full h-screen flex items-center justify-center gap-10 bg-zinc-200">
-      {data.map((elem, index)=>(
-        <div key={index} className="w-52 bg-zinc-100 rounded-md overflow-hidden">
-          <div className="w-full h-32 bg-zinc-300">
-            <img className="w-full h-full object-cover"
-            src={elem.image} 
-            alt="" 
-            />
-          </div>
-          <div className="w-full px-3 py4">
-            <h2 className="font-semibold">{elem.name}</h2>
-            <p className="text-xs mt-1 mb-3">
-              {elem.description}
-            </p>
-            <button className={`px-4 py-1 ${elem.status ? 'bg-red-600' : 'bg-blue-600'} text-xs text-zinc-100 rounded mt-0 mb-3`}>
-              {elem.status ? "Booked" : "Book now"}
-            </button>
-          </div>
+    <div className="w-full h-screen bg-screen bg-zinc-300 flex flex-col gap-4 justify-center items-center">
+      {data.map((item, index) => (
+        <div key={index} className="w-90 px-3 py-2 bg-zinc-100 rounded-md">
+          <h3 className="font-semibold text-xl">{item.name}</h3>
+          <p className="font-semibold text-xs mt-2">
+            {item.artist}
+          </p>
+          <p>
+            {item.description}
+          </p>
+          <button onClick={handleClickDownload} className="px-2 py-1 bg-blue-400 text-xs font-semibold text-zinc-100 rounded-md mt-3">
+            Download now
+          </button>
         </div>
-      ))};
+      ))}
     </div>
   );
 }
 
-export default Card
+export default Card;
